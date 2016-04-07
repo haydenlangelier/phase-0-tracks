@@ -31,8 +31,37 @@ figcaption {
   text-align: right;
 }
  
- body {width: 960px;}
+ body { margin: auto; }
 
- #external-links {width: 200px; display: inline-block; vertical-align: top;}
+ #external-links {width: 20%;
+  min-width: 10%; 
+  display: inline-block;
+   vertical-align: top;}
 
- main {width: 756px; display: inline-block; vertical-align: top;}
+ main {max-width: 60%;
+  min-width: 30%; 
+  display: inline-block;
+   vertical-align: top;
+   }
+
+ @media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink; 
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  #external-links {background-color: orange;}
+  }
+  
+}
+
+@media screen and (max-width: 500px) {
+  li{font-weight: bold;}
+  }
+  
+}
+
+  
+
