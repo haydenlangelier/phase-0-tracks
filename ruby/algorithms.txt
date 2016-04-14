@@ -1,0 +1,33 @@
+
+curr_floor = ""
+des_floor =""
+Puts "what floor/s would you like to go to?"
+input= gets.to_i
+if input = 1
+then des_floor = 1
+elseif input = 2
+then des_floor = 2
+elseif input = 3
+then des_floor = 3
+elseif input = 4
+then des_floor = 4
+elseif input = 5
+then des_floor = 5
+elseinput = 6
+then des_floor = 6
+end
+
+puts "your desired floor is #{des_floor}!"
+robot action method des_floor
+
+
+Common Task
+
+Grocery Shopping
+
+1. Check current inventory: Program could help track inventory in my fridge. 
+2. Refill logic: program could alert me to go shopping when i reach a certain level, ie low or out of something. if statement or until. 
+3. Shopping list: It could print out my shopping list for me and tell me what i need to buy that i am low on. I could also input what else i want to buy
+4. Shopping experience: As i grab each item it could track how many i need and how many i currently have. Or if possible it could purchase them for me online.
+5. Tracking. Once im back it could check inventory again to make sure am good and also update me on any shipping notifications. 
+6. Reminders. It could provide any set of automated reminders. 
