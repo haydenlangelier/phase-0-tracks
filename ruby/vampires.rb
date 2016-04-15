@@ -2,11 +2,8 @@
 
 puts "How many employees will you be processing today? (input number ex.6)"
 number=gets.to_i
-while number>0
-	number-1
 
-
-
+until number == 0
 
 puts "what is your name?"
 name= gets.chomp
@@ -17,27 +14,26 @@ garlic=gets.chomp
 puts "Would you like to enroll in the compan's health insurance? (yes/no)"
 insu=gets.chomp
 
+allergies =""
+done =""
+while allergies != done
+  puts "please list any allergies, one at a time, then type done when finished"
+  allergies=gets.chomp
+end
 
 
-if name == "Drake Cula"||"Tu Fang"
-	then puts "Definately a vampire"
-elsif age >100 && (garlic =="no" && insu =="no" )
-	then puts "Almost certainly  a vampire"
+	
+if age <100 && (garlic =="yes" || insu =="yes" )
+	then puts "Probably not a vampire"
 elsif age >100 && (garlic =="no" || insu =="no" )
 	then puts "Probably  a vampire"
-elsif age <100 && (garlic =="yes" || insu =="yes" )
-	then puts "Probably not a vampire"
+elsif age >100 && (garlic =="no" && insu =="no" )
+	then puts "Almost certainly  a vampire"
+elsif name == "Drake Cula"||"Tu Fang"
+	then puts "Definately a vampire"
 else puts "Results inconclusive"
 end
 
-# Let's launch a rocket!
-
-seconds_remaining = 10
-
-# Count down to zero
-until seconds_remaining == 0
-  puts "#{seconds_remaining} ..."
-  seconds_remaining = seconds_remaining - 1
+  number = number - 1
 end
 
-puts "BLASTOFF!"
