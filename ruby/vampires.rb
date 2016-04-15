@@ -16,8 +16,13 @@ insu=gets.chomp
 
 allergies =""
 done =""
-while allergies != done
-  puts "please list any allergies, one at a time, then type done when finished"
+
+ puts "please list any allergies, one at a time, then type done when finished"
+allergies=gets.chomp
+
+
+while allergies != "done"
+  puts "please list more allergies"
   allergies=gets.chomp
 end
 
