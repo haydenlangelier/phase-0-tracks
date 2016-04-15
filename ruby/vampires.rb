@@ -21,14 +21,15 @@ done =""
 allergies=gets.chomp
 
 
-while allergies != "done"
-  puts "please list more allergies"
-  allergies=gets.chomp
-end
 
-
-	
-if age <100 && (garlic =="yes" || insu =="yes" )
+if allergies =="sunshine"
+	puts "Definately a vamprire"
+elsif
+	while allergies != "done"
+  	puts "please list more allergies"
+  	allergies=gets.chomp
+	end
+elsif age <100 && (garlic =="yes" || insu =="yes" )
 	then puts "Probably not a vampire"
 elsif age >100 && (garlic =="no" || insu =="no" )
 	then puts "Probably  a vampire"
@@ -41,4 +42,6 @@ end
 
   number = number - 1
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends." 
 
