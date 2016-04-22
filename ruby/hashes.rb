@@ -17,6 +17,8 @@ if answer==="no"
 	correctkey=gets.chomp.to_s
 	puts "what do you want to change it to?"
 	correctvalue=gets.chomp
+	h[correctkey]="correctvalue"
+	p h 
 else
 	break
 end
