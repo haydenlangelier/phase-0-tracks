@@ -2,19 +2,17 @@ answer =""
 box={}
 until answer === "no"
 
-
 puts "what is your first name?"
 first=gets.chomp
 puts "what is your last name?"
 last=gets.chomp
 
-vowels="aeiou"
-consonants= "bcdfghjklmnpqrstvwxyz"
+
 originalname = first+" "+last
 
-newfirst= first.chars.map!{|vowels| vowels.next}.join('')
+newfirst= first.downcase.tr('aeioubcdfghjklmnpqrstvwxyz','eiouacdfghjklmnpqrstvwxyzb')
 
-newlast= last.chars.map!{|letter| letter.next}.join('')
+newlast= last.downcase.tr('aeioubcdfghjklmnpqrstvwxyz','eiouacdfghjklmnpqrstvwxyzb')
 
 newname = newlast+" "+newfirst
 
