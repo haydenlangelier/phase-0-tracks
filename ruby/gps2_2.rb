@@ -62,4 +62,17 @@ end
 a=Grocery.new
 
 a.new_list.add.remove.update.entire_list
+
+#What did you learn about pseudocode from working on this challenge?
+#I learned ALOT about method and local/global commands. It was immensely useful overall. 
+#What are the tradeoffs of using arrays and hashes for this challenge?
+#Arrays are easier to access and play with buy hashes are better for stroring two values associated together. 
+#What does a method return?
+#A method only returns what you tell it to, you have to put in more global commands and return with self so they can be accessed. 
+#What kind of things can you pass into methods as arguments?
+#You can pass almost anything into the parameter, ex strings, floats, integers, boolean, etc. 
+#How can you pass information between methods?
+#Using the @symbol to store it at the class level and return it at each method with self. 
+#What concepts were solidified in this challenge, and what concepts are still confusing?
+#Linking data between methods and classes were made more much more clear but im still confused about local, global, instance variables, etc. 
   
