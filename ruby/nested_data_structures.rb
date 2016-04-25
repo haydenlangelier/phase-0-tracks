@@ -3,7 +3,7 @@
 travel = {
     Americas: {
         north_america: {
-         USA: ["Los Angeles","New York", "San Francisco", "Seattle", "Miami", "Las Vegas"],
+         USA: ["Los Angeles","New York", "San Francisco", "Seattle", "Las Vegas"],
          Canada: ["Vancouver","Quevec", "Toronto"],
          Mexico: ["Mexico City","Cancun","Cozumel"]
         }, 
@@ -15,28 +15,32 @@ travel = {
     },
     Europe: {
         north_europe: {
-         England: ["Los Angeles","New York", "San Francisco", "Seattle", "Miami", "Las Vegas"],
-         Sweden: ["Vancouver","Quevec", "Toronto"],
-         France: ["Mexico City","Cancun","Cozumel"]
+         England: ["London","Birmingham", "Manchester", "Liverpool"],
+         Sweden: ["Stockholm","Malmo", "Uppsala"],
+         France: ["Paris","Lyon","Nice"]
         }, 
         south_europe: {
-         Italy: ["Sao Paulo","Rio de Janeiro",  "Salvador"],
-         Rome: ["Santiago","Puente Alto"],
-         Greece: ["Bogota","Medellin","Cali"]
+         Italy: ["Florence","Rome",  "Venice"],
+         Spain: ["Madrid","Barcelona"],
+         Greece: ["Athens","Delphi","Rhodes"]
         } 
-    },Asia: {
+    },
+    Asia: {
         north_asia: {
-         USA: ["Los Angeles","New York", "San Francisco", "Seattle", "Miami", "Las Vegas"],
-         Canada: ["Vancouver","Quevec", "Toronto"],
-         Mexico: ["Mexico City","Cancun","Cozumel"]
+         China: ["Beijing","Shanghai", "Shenzen", "Tianzhen"],
+         Japan: ["Tokyo","Kyoto", "Osaka"],
+         Korea: ["Seoul","Busan","Daegu"]
         }, 
         southeast_asia: {
-         Brazil: ["Sao Paulo","Rio de Janeiro",  "Salvador"],
-         Chile: ["Santiago","Puente Alto"],
-         Columbia: ["Bogota","Medellin","Cali"]
+         Indonesia: ["Jakarta","Bandung",  "Medan"],
+         Thailand: ["Bangkok" ,"Chiang Mai"],
+         Vietnam: ["Ho Chi Minh","Hanoi","Hue"]
         } 
     }
     
 }
 
 
+travel[:Asia][:southeast_asia][:Indonesia][2]
+travel[:Europe][:north_europe]
+travel[:Americas][:south_america][:Chile]
