@@ -1,4 +1,6 @@
 class Santa
+	attr_reader  :ethnicity
+	attr_accessor :gender, :age
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!" 
 	end
@@ -11,14 +13,13 @@ class Santa
 		@gender=gender
 		@ethnicity=ethnicity
 		age=0
+		@age=age
 	reindeer_ranking =["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 	@reindeer_ranking=reindeer_ranking
 	end 
 	
-	def newgender=(newgenders)
-		@gender=newgenders
-	end
-	def celebratebirthday=(age)
+
+	def celebrate_birthday
 		@age=age
 		puts "happy #{age}st birthday!"
 	end
@@ -28,14 +29,6 @@ class Santa
 		@reindeer_ranking.push(@name)
 		p @reindeer_ranking
 	end
-
-	def age
-		@age
-	end
-	def ethnicity
-		@ethnicity
-	end
-
 end
 
 
@@ -51,12 +44,16 @@ cookies.length.times do |i|
 	p santas
 
 	
-santas[0].newgender=("female")
+santas[0].gender=("female")
 
- santas[0].celebratebirthday=(1)
+
 
  santas[0].get_mad_at=("Dasher") 
 
- santas[0].age
-
- santas[0].ethnicity
+ santas[0].age =3
+ 
+  santas[0].ethnicity
+  
+   santas[0].age =3
+   
+   santas[0].celebrate_birthday
