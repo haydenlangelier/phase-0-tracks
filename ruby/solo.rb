@@ -14,13 +14,14 @@
 
 
 class PC 
-	attr_reader :OS , :form_factor 
+	attr_reader :os , :form_factor 
 	attr_accessor :app_name, :url
 
-	def initialize (OS, form_factor)
+	def initialize (os, form_factor)
 		puts "creating new PC instance! get excited!"
-		@OS=OS
+		@os=os
 		@form_factor=form_factor
+
 	end
 
 	def run_app (app_name)
@@ -34,9 +35,16 @@ class PC
 	end
 
 	def boot
-		puts "booting up #{@OS} from your #{@form_factor}!"
+		puts "booting up #{@os} from your #{@form_factor}!"
 	end
 
-
-
 end	
+
+Windows=PC.new("Windows 10", "Desktop")
+Windows.run_app("Dropbox")
+Windows.open_browser("www.google.com")
+Windows.boot
+p Windows.url
+p Windows.os
+p Windows.app_name="Microsoft office"
+p Windows.url="www.target.com"
