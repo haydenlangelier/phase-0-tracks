@@ -69,7 +69,6 @@ compare(thisgirl,thisdude)
 //this was TOUGH
 
 
-
 var randomletters = function(length) {
     var text = "";
     var alpha = "abcdefghijklmnopqrstuvwxyz";
@@ -83,8 +82,32 @@ var randomletters = function(length) {
 var randomnum=function() {
 	 return Math.floor((Math.random() * 10) + 1);
     }
- var array =[]   
-	
-var random=function(number_of_strings){
-for (i=0; i<number_of_strings.length; i++){
-randomletters(randomnum())
+
+// randomletters(randomnum()) 
+    
+   
+var output=function(number_of_strings)	{
+var n = 0;
+var x = [];
+while (n <number_of_strings) {
+ x.push(randomletters(randomnum()));
+  n++;
+}
+console.log(x);
+}
+
+//output(5);
+
+var feed=function(number)	{
+var n = 0;
+var x = [];
+while (n <number) {
+	 var t=console.log(output(5))
+	 console.log(t)
+ x.push(sortlongest(t));
+  n++;
+}
+console.log(x);
+}
+
+feed(10);
