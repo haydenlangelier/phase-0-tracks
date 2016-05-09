@@ -44,3 +44,47 @@ thisdude={age:64,name:"hayden"};
 thisgirl={ age:64,name:"cynthia"};
 
 compare(thisgirl,thisdude)
+
+// var random=function (integer){
+//for (i=0; i<integer.length; i++){}
+//    crazystring(i)
+//
+//empty array? []
+//
+//
+//var crazystring=function (length){}
+//var randomletters = function(length) {
+//    var text = "";
+//    var alpha = "abcdefghijklmnopqrstuvwxyz";
+//    for(var i = 0; i < length; i++) {
+//    }
+//   return text;
+//}
+//generate a number between 1 and 10
+//var randomnum=function {
+//	Math.floor((Math.random() * 10) + 1);
+//    }
+//
+//
+//this was TOUGH
+
+
+
+var randomletters = function(length) {
+    var text = "";
+    var alpha = "abcdefghijklmnopqrstuvwxyz";
+    for(var i = 0; i < length; i++) {
+        text += alpha.charAt(Math.floor(Math.random() * alpha.length));
+    }
+    return text;
+}
+
+
+var randomnum=function() {
+	 return Math.floor((Math.random() * 10) + 1);
+    }
+ var array =[]   
+	
+var random=function(number_of_strings){
+for (i=0; i<number_of_strings.length; i++){
+randomletters(randomnum())
