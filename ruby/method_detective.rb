@@ -14,7 +14,6 @@ p   "InVeStIgAtIoN".swapcase
 p "zom".insert(1,"o")
 
 
-<<<<<<< HEAD
 # “enhance”.<???>
 #=> “    enhance    ”
  p "enhance".center(20)
@@ -52,7 +51,7 @@ p "z".to_i
 #“How many times does the letter ‘a’ appear in this string?”.<???>
 #=> 4
 p "How many times does the letter ‘a’ appear in this string?".count("a")
-=======
+
 # "enhance".<???>
 # => "    enhance    "
 
@@ -80,4 +79,4 @@ p "How many times does the letter ‘a’ appear in this string?".count("a")
 
 # "How many times does the letter 'a' appear in this string?".<???>
 # => 4
->>>>>>> upstream/master
+

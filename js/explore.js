@@ -19,10 +19,9 @@ function reverse (string){
 reverse("aubrie")
 reverse("ekans")
 
-var input =prompt("please enter a string")
-if (input.length>0){
-	console.log(input);
+var input = reverse("raptors!")
+if (input>0){
+	console.log(input)
 }
-else if 
-	{console.log("oh no its empty");}
+
 
