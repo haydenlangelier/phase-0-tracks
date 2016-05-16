@@ -36,6 +36,6 @@ end
 magic
 @@names.each {|key,value| puts " #{key}'s secret name is #{value}!"}
 
-
+#it only stores the most recent name put in, i tried everything i could think of and couldn't solve it. but everything else works. 
 
 
