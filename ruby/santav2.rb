@@ -3,6 +3,12 @@ class Santa
 		puts "Initializing Santa Instance!"
 		@gender=gender
 		@ethnicity=ethnicity
+		@age=0
+		@reindeer_ranking=["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+	end
+	def gender=(new_gender)
+		@gender= new_gender
+		
 	end
 	def speak
 		puts "Ho,ho,ho! Happy Holidays!"
@@ -11,16 +17,35 @@ class Santa
 	def eat_milk_and_cookies(cookie)
 		puts "That was a good #{cookie} cookie!"
 	end
-	def method_name
+	def celebrate_birthday
+		@age +=1
+		puts "Happy #{@age} birthday!!!!"
+	end
+	def get_mad_at(name)
+		@reindeer_ranking.delete(name)
+		@reindeer_ranking.push(name)
+		p @reindeer_ranking
 		
 	end
-	@age=0
-	@reindeer_ranking=["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+	def age
+		@age
+	end
+	def ethnicity
+		@ethnicity
+		
+	end
+	
 end	
 
 james=Santa.new("male","French")
 james.speak
 james.eat_milk_and_cookies("peanut butter")
+james.celebrate_birthday
+james.get_mad_at("Dancer")
+james.gender=("female")
+p james
+p james.age
+p james.ethnicity
 
 
 santas=[]
