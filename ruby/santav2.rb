@@ -1,11 +1,11 @@
 class Santa
-	attr_reader :age , :ethnicity
-	attr_accessor :gender
-	def initialize(gender,ethnicity)
+	attr_reader  :ethnicity
+	attr_accessor :gender, :age
+	def initialize(gender,ethnicity,age=0)
 		puts "Initializing Santa Instance!"
 		@gender=gender
 		@ethnicity=ethnicity
-		@age=0
+		@age=age
 		@reindeer_ranking=["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 	end
 	
@@ -49,3 +49,14 @@ genders.length.times do |x|
 	santas << Santa.new(genders[x],ethnicities[x])
 	puts "There are now #{santas.length} Santas instances in the array!"
 end
+
+
+100.times do |x|
+	 santas=Santa.new(genders[rand(5)], ethnicities[rand(5)],rand(140))
+	 p santas.age
+	 p santas.gender
+	 p santas.ethnicity
+	
+end
+
+
