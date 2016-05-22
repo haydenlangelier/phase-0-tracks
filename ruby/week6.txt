@@ -1,0 +1,17 @@
+1. What are classes? Be sure to define the following terms in your explanation and describe the relationships between them:
+
+class A class is a construct that all instances of that class will follow, they will inherit its methods, attributes, etc. 
+state- state is merely the present condition of an instance, eg attributes
+behavior- the methods of an instance
+instance variable-all instances contain @, these are the instance variables, they differ between each instance
+instance method- anything preded by def methodname, they are they particular instance method that can be called. 
+2. What are attributes?
+Attributes contain the state of an instance and are accessed with @
+3. Give an example of a real world object, and describe how you might assign its attributes if you were to design a class to represent that object.
+I would use computers as the class, and then for Macintosh class it would have a customer opreating system and hardware. 
+4. What is the purpose of the initialize method? When does it run?
+Its purpose is to assign state data when the instance is initiated, it runs when it is first called. 
+5. What are modules?
+Modules are function/methods that can supplement your code. 
+6. What are the different ways you can use a module?
+They can be mixed in by putting them before your classes or you can use require to include their functionailty in your code. 
