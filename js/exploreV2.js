@@ -27,7 +27,7 @@ else  {
   console.log("error!")}}
 
 
-printif(a)
+printif("a")
 printif(b)
 printif(c)
 printif()
