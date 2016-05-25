@@ -19,15 +19,12 @@ var a=reverse("jacob")
 var b=reverse("hannah")
 var c=reverse("cheese")
 
-function printif (input){
-if  (input!=0){
-  console.log(input)
+
+if  (a!=0){
+  console.log(a)
 }
 else  {
   console.log("error!")}}
 
 
-printif("a")
-printif(b)
-printif(c)
-printif()
+
