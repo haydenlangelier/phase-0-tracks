@@ -17,14 +17,17 @@ function reverse (string){
 
 var a=reverse("jacob")
 var b=reverse("hannah")
-var b=reverse("cheese")
+var c=reverse("cheese")
 
 function printif (input){
-if  (input.length>0){
+if  (input!=0){
   console.log(input)
 }
 else  {
   console.log("error!")}}
 
 
-printif
+printif(a)
+printif(b)
+printif(c)
+printif()
