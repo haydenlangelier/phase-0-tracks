@@ -20,11 +20,7 @@ var b=reverse("hannah")
 var c=reverse("cheese")
 
 
-if  (a!=0){
-  console.log(a)
-}
-else  {
-  console.log("error!")}
+if  (1==1) {console.log("cheese")}
 
 
 
