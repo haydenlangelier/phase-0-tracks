@@ -1,5 +1,12 @@
-function reverse(string){
-return string.split(' ').reverse.join
+function reverse (string){
+
+  var splitted=string.split("");
+  var reversed=splitted.reverse();
+  var result=reversed.join("");
+  console.log (result);
 }
 
-reverse("shit")
+
+reverse("jacob")
+reverse("hannah")
+reverse("cheese")
