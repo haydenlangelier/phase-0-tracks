@@ -24,7 +24,7 @@ if  (a!=0){
   console.log(a)
 }
 else  {
-  console.log("error!")}}
+  console.log("error!")}
 
 
 
