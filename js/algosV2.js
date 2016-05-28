@@ -40,3 +40,72 @@ thisdude={age:64,name:"hayden"};
 thisgirl={ age:64,name:"cynthia"};
 
 compare(thisgirl,thisdude)
+
+// var random=function (integer){
+//for (i=0; i<integer.length; i++){}
+//    crazystring(i)
+//
+//empty array? []
+//
+//
+//var crazystring=function (length){}
+//var randomletters = function(length) {
+//    var text = "";
+//    var alpha = "abcdefghijklmnopqrstuvwxyz";
+//    for(var i = 0; i < length; i++) {
+//    }
+//   return text;
+//}
+//generate a number between 1 and 10
+//var randomnum=function {
+//	Math.floor((Math.random() * 10) + 1);
+//    }
+//
+//
+//this was TOUGH
+
+
+var randomletters = function(length) {
+    var text = "";
+    var alpha = "abcdefghijklmnopqrstuvwxyz";
+    for(var i = 0; i < length; i++) {
+        text += alpha.charAt(Math.floor(Math.random() * alpha.length));
+    }
+    return text;
+}
+
+
+var randomnum=function() {
+	 return Math.floor((Math.random() * 10) + 1);
+    }
+
+// randomletters(randomnum()) 
+    
+   
+var output=function(number_of_strings)	{
+var n = 0;
+var x = [];
+while (n <number_of_strings) {
+ x.push(randomletters(randomnum()));
+  n++;
+}
+console.log(x);
+}
+
+//output(5);
+
+function feed(number)	{
+var n = 0;
+var x = [];
+while (n <number) {
+	 var t=console.log(output(5))
+	 console.log(t)
+ x.push(sortlongest(t));
+  n++;
+}
+console.log(x);
+}
+
+feed(10);
+
+// it didn't end up working quite as well as i wanted, but it sorta works...
