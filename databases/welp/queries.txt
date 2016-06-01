@@ -1,6 +1,6 @@
 
 
-This is how we linked 3 different tables, using the inner joins command:
+This is how we linked 3 different tables, first selecting the tables/column manes in the order we wanted to print then from the main table revies then inner joining both of the other tables. 
 
 
 
@@ -13,3 +13,8 @@ Mark|3|My wife find a great dress!|Wedding dresses for the engaged
 sqlite>
 
 Here above, is our output^
+
+This is how we selected just the Wedding Chappel, all we did is add a where function on the end to select it by business id. 
+
+SELECT u.first_name,r.stars,r.comment,b.name FROM reviews r INNER JOIN businesses b on r.business_id = b.id INNER JOIN users u on r.user_id = u.id WHERE b.id="1";
+Jenny|0|This place is awful. We were married for 8 minutes|Randy's Wedding Chapel
