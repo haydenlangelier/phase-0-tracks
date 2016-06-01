@@ -1,0 +1,15 @@
+
+
+This is how we linked 3 different tables, using the inner joins command:
+
+
+
+
+
+SELECT u.first_name,r.stars,r.comment,b.name FROM reviews r INNER JOIN businesses b on r.business_id = b.id INNER JOIN users u on r.user_id = u.id;
+Jenny|0|This place is awful. We were married for 8 minutes|Randy's Wedding Chapel
+Sandra|5|this is the best place ver|Good Stuff for Cheap
+Mark|3|My wife find a great dress!|Wedding dresses for the engaged
+sqlite>
+
+Here above, is our output^
