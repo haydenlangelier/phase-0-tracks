@@ -6,15 +6,15 @@ This is how we linked 3 different tables, first selecting the tables/column mane
 
 
 
-SELECT u.first_name,r.stars,r.comment,b.name FROM reviews r INNER JOIN businesses b on r.business_id = b.id INNER JOIN users u on r.user_id = u.id;
-Jenny|0|This place is awful. We were married for 8 minutes|Randy's Wedding Chapel
-Sandra|5|this is the best place ver|Good Stuff for Cheap
-Mark|3|My wife find a great dress!|Wedding dresses for the engaged
+SELECT u.first_name,u.last_name,r.stars,r.comment,b.name FROM reviews r INNER JOIN businesses b on r.business_id = b.id INNER JOIN users u on r.user_id = u.id;
+Jenny|Johnson|0|This place is awful. We were married for 8 minutes|Randy's Wedding Chapel
+Sandra|Chang|5|this is the best place ver|Good Stuff for Cheap
+Mark|Smith|3|My wife find a great dress!|Wedding dresses for the engaged
 sqlite>
 
 Here above, is our output^
 
 This is how we selected just the Wedding Chappel, all we did is add a where function on the end to select it by business id. 
 
-SELECT u.first_name,r.stars,r.comment,b.name FROM reviews r INNER JOIN businesses b on r.business_id = b.id INNER JOIN users u on r.user_id = u.id WHERE b.id="1";
-Jenny|0|This place is awful. We were married for 8 minutes|Randy's Wedding Chapel
+SELECT u.first_name,u.last_name,r.stars,r.comment,b.name FROM reviews r INNER JOIN businesses b on r.business_id = b.id INNER JOIN users u on r.user_id = u.id WHERE b.id="1";
+Jenny|Johnson|0|This place is awful. We were married for 8 minutes|Randy's Wedding Chapel
