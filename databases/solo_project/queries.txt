@@ -50,6 +50,24 @@ sqlite> SELECT * FROM computers;
 3|ARM|IMVR|64|2
 
 
+This is an example of how you use a regular joins!
+
+SELECT computers.cpu, computers.gpu, software.kernel FROM computers JOIN software ON computers.os=software.id;
+Intel|Nvidia|Linux
+ARM|IMVR|Windows
+
+Here is how to do a left join:
+
+sqlite> SELECT cpu, os FROM computers c LEFT JOIN software s ON c.os=s.id;
+Intel|1
+ARM|2
+
+Here is an example of inner joins ;
+
+ SELECT cpu, gpu,os, kernel FROM computers INNER JOIN software ON computers.os=software.id;
+Intel|Nvidia|1|Linux
+ARM|IMVR|2|Windows
+
 
 
 
