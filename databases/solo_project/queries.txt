@@ -1,0 +1,55 @@
+This is how you select all the data from a single table!
+
+SELECT * FROM computers;
+1|Intel|Nvidia|250|1
+2|AMD|Radeon|100|0
+3|ARM|IMVR|64|2
+
+This is how you update an item based on condition and i verified
+the output using select. 
+
+
+UPDATE computers SET gpu="Titan X" WHERE cpu="AMD";
+sqlite> SELECT * FROM computers;
+1|Intel|Nvidia|250|1
+2|AMD|Titan X|100|0
+3|ARM|IMVR|64|2
+
+This is how you display the information in both tables in one query, looks weird though....
+
+SELECT * FROM computers, software;
+1|Intel|Nvidia|250|1|1|Linux
+1|Intel|Nvidia|250|1|2|Windows
+1|Intel|Nvidia|250|1|3|Macintosh
+2|AMD|Titan X|100|0|1|Linux
+2|AMD|Titan X|100|0|2|Windows
+2|AMD|Titan X|100|0|3|Macintosh
+3|ARM|IMVR|64|2|1|Linux
+3|ARM|IMVR|64|2|2|Windows
+3|ARM|IMVR|64|2|3|Macintosh
+
+This is how you select only certain specificed column names from multiple
+tables in one query!
+
+SELECT cpu, gpu, kernel FROM computers, software;
+Intel|Nvidia|Linux
+Intel|Nvidia|Windows
+Intel|Nvidia|Macintosh
+AMD|Titan X|Linux
+AMD|Titan X|Windows
+AMD|Titan X|Macintosh
+ARM|IMVR|Linux
+ARM|IMVR|Windows
+ARM|IMVR|Macintosh
+
+This is how you delete an item from a table!
+
+DELETE FROM computers WHERE gpu="Titan X";
+sqlite> SELECT * FROM computers;
+1|Intel|Nvidia|250|1
+3|ARM|IMVR|64|2
+
+
+
+
+
