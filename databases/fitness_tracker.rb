@@ -104,6 +104,12 @@ response=gets.chomp.downcase
 		db.execute("UPDATE running SET address = ? WHERE id = ?;",[correct_description,run_number])
 		db.execute("UPDATE running SET distance = ? WHERE id = ?;",[correct_distance,run_number])
 		db.execute("SELECT * FROM running WHERE id = ?;",[run_number])
+	else 
+
+		puts "Which run number would you like to delete? Please enter just the number"
+		run_number=gets.to_i
+		db.execute("DELETE FROM running WHERE id = ?;",[run_number])
+
 		
 	end
 end
