@@ -23,7 +23,9 @@ new_table = <<-SQL
   CREATE TABLE IF NOT EXISTS exercise(
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
+   
     distance INT
+
   )
 SQL
 
@@ -39,37 +41,44 @@ db.execute(new_table)
 
 
 #creating a method for running and including the db, name, and distance ran(miles)
+
 def run(db,name,distance)
 	db.execute("INSERT INTO exercise(name,distance) VALUES(?,?)",[name,distance])
 end
 
-100.times do
-  run(db, Faker::Name.name, rand(30))
+30.times do
+  	run(db, Faker::Name.name,rand(30))
 end
 
-#here im going to ask the user for their run information
-puts "Please type a description of your run"
-description=gets.chomp
-puts "How far did you run(in miles)?"
-miles=gets.to_i
-#here i am I am inputingg their information at the end of the list
-db.execute("INSERT INTO exercise(name,distance) VALUES(?,?)",[description,miles])
+#setting up a loop here!!!
+
+answer=''
+puts "What is your name?"
+username=gets.chomp
+until answer=="no"
+	#here im going to ask the user for their run information
+	
+	puts "How far did you run(in miles)?"
+	miles=gets.to_i
+	#here i am I am inputingg their information at the end of the list
+	db.execute("INSERT INTO exercise(name,distance) VALUES(?,?)",[username,miles])
 
 
-puts "Would you like to enter another run? Please enter yes or no."
-answer=gets.chomp.downcase
+	#Here i created a method for calculated the number of calories burned and printed it for the end user to see!
 
+	def calories_burned(miles_ran)
+		calories=miles_ran*600
+		puts "You have burned #{calories} calories, congratulations!!!"
+	end
+	calories_burned(miles)
 
-#Here i created a method for calculated the number of calories burned and printed it for the end user to see!
+	puts "Would you like to enter another run? Please enter yes or no."
+	answer=gets.chomp.downcase
 
-def calories_burned(miles_ran)
-	calories=miles_ran*600
-	puts "You have burned #{calories} calories, congratulations!!!"
 end
-calories_burned(miles)
 
 # explore ORM by retrieving data
-# kittens = db.execute("SELECT * FROM kittens")
-# kittens.each do |kitten|
-#  puts "#{kitten['name']} is #{kitten['age']}"
-# end
+all_runs = db.execute("SELECT * FROM exercise")
+all_runs.each do |runner|
+puts "#{runner['name']} ran #{runner['distance']} miles through #{Faker::Address.street_address}. "
+end
