@@ -31,8 +31,6 @@ SQL
 
 
 
-
-
 #create an empty table
 db.execute(new_table)
 
@@ -47,10 +45,10 @@ def run(db,name,address,distance)
 end
 
 
-
-30.times do
-  	run(db, Faker::Name.name,Faker::Address.street_address,rand(30))
-end
+# I commented this out because it kept growing and growing and growing while i was working on it
+#30.times do
+#  	run(db, Faker::Name.name,Faker::Address.street_address,rand(30))
+#end
 
 #setting up a loop here!!!
 
@@ -80,8 +78,32 @@ until answer=="no"
 
 end
 
+
+
 # here i am outputting the runs, distance, run number, address etc
 all_runs = db.execute("SELECT * FROM running")
 all_runs.each do |runner|
 puts "#{runner['name']} ran #{runner['distance']} miles on run number #{runner['id']} through #{runner['address']}. "
+end
+
+
+#here i have created a loop for updating or deleting entries
+response=''
+until response=='done' do
+puts "Now you can update one of your entries if you would like!"
+puts "Please type update,delete, or done."
+response=gets.chomp.downcase
+
+	if response=="update" 
+		puts "Which run number would you like to update? Please enter just the number"
+		run_number=gets.to_i
+		puts "What was the correct distance in miles?"
+		correct_distance=gets.to_i
+		puts "What was the correct running location description?"
+		correct_description=gets.chomp
+		db.execute("UPDATE running SET address = ? WHERE id = ?;",[correct_description,run_number])
+		db.execute("UPDATE running SET distance = ? WHERE id = ?;",[correct_distance,run_number])
+		db.execute("SELECT * FROM running WHERE id = ?;",[run_number])
+		
+	end
 end
