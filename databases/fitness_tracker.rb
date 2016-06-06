@@ -17,6 +17,8 @@ db.results_as_hash = true
 
 #creating the outline for a new table
 #all distance is in miles
+#this didn't work at first so i had to look at some other source code
+#but it's working now!
 new_table = <<-SQL
   CREATE TABLE IF NOT EXISTS exercise(
     id INTEGER PRIMARY KEY,
@@ -27,9 +29,20 @@ SQL
 
 
 
+
+
 #create an empty table
 db.execute(new_table)
 
 #testing it out to ensure it works!
-db.execute("INSERT INTO exercise (name,distance) VALUES ('Hayden',5)")
+#db.execute("INSERT INTO exercise (name,distance) VALUES ('Hayden',5)")
 
+
+#creating a method for running and including the db, name, and distance ran(miles)
+def run(db,name,distance)
+	db.execute("INSERT INTO exercise(name,distance) VALUES(?,?)",[name,distance])
+end
+
+100.times do
+  run(db, Faker::Name.name, rand(30))
+end
