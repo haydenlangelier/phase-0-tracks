@@ -11,4 +11,26 @@ require 'faker'
 
 
 #creating a new fresh datbase
-db=SQLite3::Database.new("exercise_data.db")
+db=SQLite3::Database.new("exercise.db")
+
+
+
+#creating the outline for a new table
+#all distance is in miles
+create_blank= <<-DATA 
+	CREATE TABLE IF NOT EXIST = raw_data(
+		id INTEGER PRIMARY KEY,
+		username VARCHAR(255),
+		distance INT,
+		date VARCHAR(255)
+)
+DATA
+
+
+
+#create an empty table
+db.execute(create_blank)
+
+#testing it out to ensure it works!
+db.execute("INSERT INTO exercise (username,distance,date) VALUES ('Hayden",5,"June 5th")")
+
