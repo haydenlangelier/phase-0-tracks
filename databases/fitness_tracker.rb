@@ -11,7 +11,7 @@ require 'faker'
 
 
 #creating a new fresh datbase
-db = SQLite3::Database.new("exercise.db")
+db = SQLite3::Database.new("running.db")
 db.results_as_hash = true
 
 
@@ -20,10 +20,10 @@ db.results_as_hash = true
 #this didn't work at first so i had to look at some other source code
 #but it's working now!
 new_table = <<-SQL
-  CREATE TABLE IF NOT EXISTS exercise(
+  CREATE TABLE IF NOT EXISTS running(
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
-   
+   	address VARCHAR(255),
     distance INT
 
   )
@@ -42,12 +42,14 @@ db.execute(new_table)
 
 #creating a method for running and including the db, name, and distance ran(miles)
 
-def run(db,name,distance)
-	db.execute("INSERT INTO exercise(name,distance) VALUES(?,?)",[name,distance])
+def run(db,name,address,distance)
+	db.execute("INSERT INTO running(name,address,distance) VALUES(?,?,?)",[name,address,distance])
 end
 
+
+
 30.times do
-  	run(db, Faker::Name.name,rand(30))
+  	run(db, Faker::Name.name,Faker::Address.street_address,rand(30))
 end
 
 #setting up a loop here!!!
@@ -57,11 +59,12 @@ puts "What is your name?"
 username=gets.chomp
 until answer=="no"
 	#here im going to ask the user for their run information
-	
+	puts "Where did you run?"
+	where=gets.chomp
 	puts "How far did you run(in miles)?"
 	miles=gets.to_i
 	#here i am I am inputingg their information at the end of the list
-	db.execute("INSERT INTO exercise(name,distance) VALUES(?,?)",[username,miles])
+	db.execute("INSERT INTO running(name,address,distance) VALUES(?,?,?)",[username,where,miles])
 
 
 	#Here i created a method for calculated the number of calories burned and printed it for the end user to see!
@@ -77,8 +80,8 @@ until answer=="no"
 
 end
 
-# explore ORM by retrieving data
-all_runs = db.execute("SELECT * FROM exercise")
+# here i am outputting the runs, distance, run number, address etc
+all_runs = db.execute("SELECT * FROM running")
 all_runs.each do |runner|
-puts "#{runner['name']} ran #{runner['distance']} miles through #{Faker::Address.street_address}. "
+puts "#{runner['name']} ran #{runner['distance']} miles on run number #{runner['id']} through #{runner['address']}. "
 end
