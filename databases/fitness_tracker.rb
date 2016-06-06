@@ -5,32 +5,31 @@
 
 
 #here i require the two gems needed
-require 'SQLite3'
+require 'sqlite3'
 require 'faker'
 
 
 
 #creating a new fresh datbase
-db=SQLite3::Database.new("exercise.db")
-
+db = SQLite3::Database.new("exercise.db")
+db.results_as_hash = true
 
 
 #creating the outline for a new table
 #all distance is in miles
-create_blank= <<-LOG
-	CREATE TABLE IF NOT EXISTS = raw_data(
-		id INTEGER PRIMARY KEY,
-		username VARCHAR(255),
-		distance INT,
-		date VARCHAR(255)
-)
-LOG
+new_table = <<-SQL
+  CREATE TABLE IF NOT EXISTS exercise(
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+    distance INT
+  )
+SQL
 
 
 
 #create an empty table
-db.execute(create_blank)
+db.execute(new_table)
 
 #testing it out to ensure it works!
-db.execute("INSERT INTO exercise (username,distance,date) VALUES ('Hayden",5,"June 5th")")
+db.execute("INSERT INTO exercise (name,distance) VALUES ('Hayden',5)")
 
