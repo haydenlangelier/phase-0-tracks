@@ -13,12 +13,17 @@ get '/' do
   erb :home
 end
 
+get '/campuses' do
+  @campuses = db.execute("SELECT * FROM campus")
+  erb :campus
+end
+
 get '/students/new' do
   erb :new_student
 end
 
-get '/learning' do
-	erb :sinatra_template
+get '/campuses/new' do
+	erb :new_campus
 end
 
 # create new students via
@@ -27,5 +32,9 @@ post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
   redirect '/'
 end
-
+#adding a new campus
+post '/campuses' do
+  db.execute("INSERT INTO campus (location) VALUES (?)", [params['campus']])
+  redirect '/campuses'
+end
 # add static resources
