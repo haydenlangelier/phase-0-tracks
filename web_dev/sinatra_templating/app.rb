@@ -17,6 +17,10 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/learning' do
+	erb :sinatra_template
+end
+
 # create new students via
 # a form
 post '/students' do
