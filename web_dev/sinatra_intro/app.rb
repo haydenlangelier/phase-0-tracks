@@ -1,6 +1,7 @@
 # require gems
 require 'sinatra'
 require 'sqlite3'
+require 'faker'
 
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
@@ -44,3 +45,31 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+#contact route that displays an address
+
+get '/contact' do 
+  addresses=db.execute("SELECT * FROM address")
+  response=''
+  addresses.each do |location|
+    response << "Street Address: #{location['street']}<br>"
+  end
+  response
+end
+
+# great job route/greeting
+
+get '/great_job' do
+  name=params[:name]
+  if name 
+    "Good job,#{name}"
+  else
+    "Good job!!!!"
+  end
+end
+
+
+
+
+
+
