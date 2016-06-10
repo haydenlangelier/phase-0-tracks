@@ -71,9 +71,9 @@ end
 
 #route for adding two numbers
 get '/:number_1/add/:number_2' do
-  number_1=:number_1
-  number_2=:number_2
-  number_3=number_1.to_i+number_2.to_i
+ number_1=params[:number_1]
+ number_2=params[:number_2]
+  number_3=number_1.to_s.to_i+number_2.to_s.to_i
   "#{number_1} plus #{number_2} equals #{number_3}"
 end
 
