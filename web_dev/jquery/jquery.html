@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>All about PC's!</title>
 </head>
 <body>
+<h2>Bow down to Windows 10!</h2>
+<img src="http://i.imgur.com/8vH3dft.png">
+<p id="lie">PC's are the best ever! Microsoft is such a great
+ company</p>
+ <a href="www.microsoft.com">Click here to learn more about Windows!</a>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+	$("h2").html("Mac OSX and <em>apple</em> are the best things ever!");
 
+	var joke= $("#lie").text();
+
+	$("#lie").text("the following is a total joke:"+joke+" haha, can you believe they said that?");
+
+	$("h2").css("color","red");
+
+	$("img").attr("src","http://i.imgur.com/EVtVZLk.png");
+
+	$("a").attr("href","https://www.apple.com");
+
+	var more=$("<p>");
+	more.text("this is so much more you need to know about apple and OSX!!!!");
+	$("body").append(more);
+
+
+</script>
 </body>
-<script type="text/javascript"></script>
-<script type="text/javascript"></script>
+
 </html>
