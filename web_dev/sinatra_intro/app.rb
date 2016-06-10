@@ -77,6 +77,14 @@ get '/:number_1/add/:number_2' do
   "#{number_1} plus #{number_2} equals #{number_3}"
 end
 
+#route for finding students by campus
+get '/campus/:campus' do
+  
+  campuses=db.execute("SELECT name,campus FROM students WHERE campus=?",[params[:campus]])
+  campuses.to_s
+
+
+end
 
 
 
