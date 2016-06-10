@@ -69,6 +69,14 @@ get '/great_job' do
 end
 
 
+#route for adding two numbers
+get '/:number_1/add/:number_2' do
+  number_1=:number_1
+  number_2=:number_2
+  number_3=number_1.to_i+number_2.to_i
+  "#{number_1} plus #{number_2} equals #{number_3}"
+end
+
 
 
 
